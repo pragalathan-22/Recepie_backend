@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% load company_tags %}  {# Custom template tag we'll create #}
+
+{% block title %}{{ site_title|default:_('Admin') }}{% endblock %}
+
+{% block branding %}
+  {% get_company_info as company %}
+  {% if company %}
+    <div id="site-name">
+      <img src="{{ company.logo.url }}" alt="Logo" height="40" style="vertical-align: middle; margin-right: 10px;">
+      <span>{{ company.name }}</span>
+    </div>
+  {% else %}
+    <div id="site-name">Admin</div>
+  {% endif %}
+{% endblock %}
+    
