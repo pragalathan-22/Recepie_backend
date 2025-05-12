@@ -35,7 +35,7 @@ api_patterns = [
 
 # Admin views
 admin_patterns = [
-    path('admin-panel/', admin_page, name='admin-page'),
+    path('', admin_page, name='admin-page'),
     path('delete-food/<int:food_id>/', delete_food, name='delete-food'),
     path('admin/order-tracking/', order_tracking, name='order-tracking'),
     path('admin/update-order-status/<int:order_id>/', update_order_status, name='update-order-status'),
